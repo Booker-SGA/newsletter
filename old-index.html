@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booker High SGA Newsletter</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DynaPuff:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Quicksand', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    .tornado {
+      background-image: url(tornado.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100px;
+      width: 300px;
+    }
+
+    header {
+      background-image: url(header.jpg);
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      text-align: center;
+      color: white;
+      height: 300px;
+    }
+
+    header img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    header .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: white;
+      /* Gold */
+      margin: 0;
+      font-family: 'DynaPuff', cursive;
+      font-weight: 700;
+      /* Use 400, 600, or 700 for thickness */
+      font-size: 3rem;
+    }
+
+    header h2 {
+      font-size: 1.5rem;
+      color: #fff;
+      margin: 10px 0 0;
+      font-family: 'DynaPuff', cursive;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    h2 {
+      color: #9348c9;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 20px;
+    }
+
+    .left-column {
+      flex: 0 0 55%;
+    }
+
+    .right-column {
+      flex: 0 0 40%;
+    }
+
+    .box {
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 18px;
+    }
+
+    .purple-box {
+      background-color: #a261d1;
+      /* Purple */
+      color: #fff;
+    }
+
+    .gold-box {
+      background-color: #ffea77;
+      /* Gold */
+      color: #000;
+    }
+
+    h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #4B0082;
+      color: white;
+      margin-top: 40px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .full-width-image {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .full-width-image img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      object-position: center 38%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .full-width-image img:hover {
+      transform: scale(1.02);
+    }
+
+    .tornado-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+
+      .left-column,
+      .right-column {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery img {
+        height: 180px;
+      }
+
+      .gallery img:last-child {
+        grid-column: 1;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div class="overlay">
+      <h1 id="arched-text">SEPTEMBER NEWSLETTER</h1>
+
+      <h2>2025-2026 SGA Booker High</h2>
+    </div>
+  </header>
+  <main class="container">
+
+    <div class="left-column">
+      <h2>SENIOR CLASS</h2>
+      <div class="box gold-box">
+        <p>Senior SGA is up and running! We are working hard at making sure this year will be the best senior year.
+          Right now we are preparing for the year by coming up with fundraising ideas and trying to bring some more
+          school spirit! A 'Senior Sunrise' is in the works and we will be sending out more information about senior
+          T-shirts in the next week! Students will get to vote on the Tshirt and then we start selling!!! This senior
+          year will be full of memories and surprises.</p>
+      </div>
+
+      <h2>JUNIOR CLASS</h2>
+      <div class="box gold-box">
+        <p>The class of 2027 began the year decorating the Junior hallway to welcome back students. We also installed a
+          legendary class board featuring the Junior SGA members. Currently we are working on deciding the homecoming
+          theme and Spirt Week days. We are looking forward to homecoming to celebrate our team and show our school
+          spirit!</p>
+      </div>
+
+      <h2>SOPHOMORE CLASS</h2>
+      <div class="box gold-box">
+        <p>The Sophomore class brought the hallways to life with their class color - white - showcasing creativity,
+          teamwork, and pride! Their section now gleams with spirit and excitement as they gear up to present their
+          Homecoming theme for deliberation.</p>
+      </div>
+    </div>
+
+    <div class="right-column">
+      <h2>STUDENT BODY</h2>
+      <div class="box gold-box">
+        <p>We are excited to launch our newest initiative: Club Rush!
+          Once a month, we spotlight clubs and activities on campus.
+          This exciting event boosts school spirit, sparks interest in clubs, and creates amazing social connections across our campus.
+          Meanwhile, we're hard at work planning an unforgettable Homecoming dance. After hearing your ideas at our Homecoming mixer, we are maintaining
+          momentum to create a truly collaborative Homecoming experience that brings our entire Booker community together!</p>
+      </div>
+
+      <h2>SGA IN ACTION</h2>
+      <div class="gallery">
+        <img src="artwork.png" alt="Student artwork display" />
+        <img src="juniors.png" alt="Junior class members" />
+      </div>
+    </div>
+
+    <div class="full-width-image">
+      <img src="kila-and-crew.png" alt="Kila and crew at school event" />
+    </div>
+
+    <div class="tornado-container">
+      <div class="tornado box"></div>
+    </div>
+
+  </main>
+  <footer>
+    <p>© 2025 Booker High School SGA</p>
+  </footer>
+</body>
+
+</html>

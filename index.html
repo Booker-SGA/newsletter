@@ -17,28 +17,82 @@
       color: #333;
     }
 
-    .tornado {
-      background-image: url(tornado.png);
-      background-repeat: no-repeat;
-      background-position: center;
-      height: 100px;
-      width: 300px;
-    }
-
     header {
-      background-image: url(header.jpg);
-      background-size: cover;
-      background-position: center;
       position: relative;
       text-align: center;
       color: white;
       height: 300px;
+      overflow: hidden;
     }
 
-    header img {
+    #headerSlidesWrapper {
+      display: flex;
+      transition: transform 0.5s ease-out;
+      height: 100%;
+      gap: 15px;
+      padding-top: 0;
+      align-items: flex-start;
+    }
+
+    .header-slide {
+      flex-shrink: 0;
+      height: 100%;
+      width: 200px;
+    }
+
+    .header-slide img {
+      height: 100%;
       width: 100%;
-      height: auto;
+      object-fit: cover;
+      object-position: center top;
       display: block;
+    }
+
+    .header-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255, 255, 255, 0.8);
+      color: #333;
+      border: none;
+      font-size: 2rem;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+      transition: background-color 0.3s;
+    }
+
+    .header-arrow:hover {
+      background-color: rgba(255, 255, 255, 1);
+    }
+
+    .header-arrow-left {
+      left: 10px;
+    }
+
+    .header-arrow-right {
+      right: 10px;
+    }
+
+    .tornado {
+      background-image: url(tornado.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      height: 150px;
+      width: 100%;
+      max-width: 300px;
+    }
+
+    .tornado-container {
+      display: flex;
+      justify-content: center;
+      width: 100%;
     }
 
     header .overlay {
@@ -52,17 +106,15 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      z-index: 5;
     }
 
     header h1 {
       font-size: 3rem;
       color: white;
-      /* Gold */
       margin: 0;
       font-family: 'DynaPuff', cursive;
       font-weight: 700;
-      /* Use 400, 600, or 700 for thickness */
-      font-size: 3rem;
     }
 
     header h2 {
@@ -74,49 +126,41 @@
       text-decoration: none;
     }
 
-    h2 {
-      color: #9348c9;
-      font-weight: 700;
-      text-decoration: underline;
-    }
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 20px;
+    .content-container {
       max-width: 1200px;
       margin: 0 auto;
-      gap: 20px;
+      padding: 20px;
     }
 
-    .left-column {
-      flex: 0 0 55%;
-    }
-
-    .right-column {
-      flex: 0 0 40%;
-    }
-
-    .box {
-      padding: 15px;
+    .full-width-div {
+      width: 100%;
+      padding: 40px;
       margin-bottom: 20px;
       border-radius: 18px;
+      box-sizing: border-box;
     }
 
-    .purple-box {
+    .purple-div {
       background-color: #a261d1;
-      /* Purple */
-      color: #fff;
+      color: white;
     }
 
-    .gold-box {
+    .gold-div {
       background-color: #ffea77;
-      /* Gold */
       color: #000;
     }
 
-    h3 {
+    .full-width-div h2 {
       margin-top: 0;
+      font-family: 'DynaPuff', cursive;
+      font-weight: 700;
+      font-size: 2rem;
+    }
+
+    .full-width-div p {
+      font-size: 1.1rem;
+      line-height: 1.6;
     }
 
     footer {
@@ -127,74 +171,30 @@
       margin-top: 40px;
     }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-top: 10px;
-    }
-
-    .gallery img {
-      width: 100%;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
-
-    .full-width-image {
-      width: 100%;
-      margin-top: 20px;
-    }
-
-    .full-width-image img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      object-position: center 38%;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-    }
-
-    .full-width-image img:hover {
-      transform: scale(1.02);
-    }
-
-    .tornado-container {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-    }
-
     @media (max-width: 768px) {
-      .container {
-        flex-direction: column;
+      header h1 {
+        font-size: 2rem;
       }
 
-      .left-column,
-      .right-column {
-        flex: 0 0 100%;
-        max-width: 100%;
+      header h2 {
+        font-size: 1.2rem;
       }
 
-      .gallery {
-        grid-template-columns: 1fr;
+      .header-slide img {
+        height: 100%;
+        width: auto;
       }
 
-      .gallery img {
-        height: 180px;
+      .full-width-div {
+        padding: 20px;
       }
 
-      .gallery img:last-child {
-        grid-column: 1;
+      .full-width-div h2 {
+        font-size: 1.5rem;
+      }
+
+      .full-width-div p {
+        font-size: 1rem;
       }
     }
   </style>
@@ -203,69 +203,224 @@
 
 <body>
   <header>
+    <div id="headerSlidesWrapper"></div>
+    <button class="header-arrow header-arrow-left" id="headerPrevBtn" type="button">‹</button>
+    <button class="header-arrow header-arrow-right" id="headerNextBtn" type="button">›</button>
     <div class="overlay">
-      <h1 id="arched-text">SEPTEMBER NEWSLETTER</h1>
-
+      <h1>OCTOBER NEWSLETTER</h1>
       <h2>2025-2026 SGA Booker High</h2>
     </div>
   </header>
-  <main class="container">
 
-    <div class="left-column">
-      <h2>SENIOR CLASS</h2>
-      <div class="box gold-box">
-        <p>Senior SGA is up and running! We are working hard at making sure this year will be the best senior year.
-          Right now we are preparing for the year by coming up with fundraising ideas and trying to bring some more
-          school spirit! A 'Senior Sunrise' is in the works and we will be sending out more information about senior
-          T-shirts in the next week! Students will get to vote on the Tshirt and then we start selling!!! This senior
-          year will be full of memories and surprises.</p>
-      </div>
-
-      <h2>JUNIOR CLASS</h2>
-      <div class="box gold-box">
-        <p>The class of 2027 began the year decorating the Junior hallway to welcome back students. We also installed a
-          legendary class board featuring the Junior SGA members. Currently we are working on deciding the homecoming
-          theme and Spirt Week days. We are looking forward to homecoming to celebrate our team and show our school
-          spirit!</p>
-      </div>
-
-      <h2>SOPHOMORE CLASS</h2>
-      <div class="box gold-box">
-        <p>The Sophomore class brought the hallways to life with their class color - white - showcasing creativity,
-          teamwork, and pride! Their section now gleams with spirit and excitement as they gear up to present their
-          Homecoming theme for deliberation.</p>
-      </div>
+  <div class="content-container">
+    <div class="full-width-div purple-div">
+      <h2>An Update From Student Government</h2>
+      <p>Student government had a busy month, with all four classes coming together to make our Afterglow Homecoming a
+        success! The Sophomore class showed off their school spirit with their amazing hallway decorations and energy at
+        the pep rally! The class of 2028 is also still working hard on the Booker Basics Initiative by restocking the
+        bathrooms with free feminine products weekly, and our own Ava Donoghue was featured on the Suncoast View to
+        speak about it! After running the very popular photobooth at Homecoming, the Juniors are hard at work planning
+        fundraisers and prom! Finally, after spearheading the Homecoming planning, next on the agenda for the class of
+        2026 is Senior Sunrise! This will be on 10/24 at 6:20 AM, and will feature games, crafts, and a Chick-fil-a
+        breakfast.
+        We are so excited for this upcoming month, and thank you to everyone who made this past month such a success!
+      </p>
     </div>
 
-    <div class="right-column">
-      <h2>STUDENT BODY</h2>
-      <div class="box gold-box">
-        <p>We are excited to launch our newest initiative: Club Rush!
-          Once a month, we spotlight clubs and activities on campus.
-          This exciting event boosts school spirit, sparks interest in clubs, and creates amazing social connections across our campus.
-          Meanwhile, we're hard at work planning an unforgettable Homecoming dance. After hearing your ideas at our Homecoming mixer, we are maintaining
-          momentum to create a truly collaborative Homecoming experience that brings our entire Booker community together!</p>
-      </div>
+    <div class="full-width-div gold-div">
+      <h2>A Message from Ms. Ladd</h2>
+      <p>September was a busy month! Another HOCO season has come and gone. In the middle of all the preparation for
+        HOCO, SGA still managed to organize our first Club RUSH. It went well and we are looking forward to our next
+        Club RUSH on Oct. 22nd.
 
-      <h2>SGA IN ACTION</h2>
-      <div class="gallery">
-        <img src="artwork.png" alt="Student artwork display" />
-        <img src="juniors.png" alt="Junior class members" />
-      </div>
-    </div>
+        I want to take a moment and shine the spotlight on our SGA officers, members, and advisors who put in long hours
+        and have been planning since July. SGA is student led and they plan spirit week, the pep rally, hall
+        decorations, the HOCO dance, and fundraising at the homecoming game. Their hard work and dedication have not
+        gone unnoticed.
 
-    <div class="full-width-image">
-      <img src="kila-and-crew.png" alt="Kila and crew at school event" />
+        Thank you to the staff who participated in spirit week and to those of you who sent kind words to the students
+        about all they did to make HOCO/spirit week happen.
+        Thank you to our SGA parents who contributed to HOCO. Our SGA parents are the best from purchasing items for
+        homecoming to helping us set up. We appreciate YOU!
+        Shout out to our sophomore president, Ava Donoghue who was on ABC 7 news talking about her Booker Basic
+        initiative. If you want to watch it here is <a href="https://www.mysuncoast.com/2025/09/16/booker-basics-initiative-with-voices-florida/">the link.</a></p>
     </div>
 
     <div class="tornado-container">
-      <div class="tornado box"></div>
+      <div class="tornado"></div>
     </div>
+  </div>
 
-  </main>
   <footer>
     <p>© 2025 Booker High School SGA</p>
+    <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">Newsletter by Julianne Teague</p>
   </footer>
+
+  <script>
+    const headerSlidesWrapper = document.getElementById('headerSlidesWrapper');
+    const headerPrevBtn = document.getElementById('headerPrevBtn');
+    const headerNextBtn = document.getElementById('headerNextBtn');
+
+    // All images - duplicated 3 times for infinite scroll
+    const allImages = [
+      'images/october/IMG_3945.jpg',
+      'images/october/IMG_3947.jpg',
+      'images/october/IMG_3948.jpg',
+      'images/october/IMG_3949.jpg',
+      'images/october/IMG_3950.jpg',
+      'images/october/IMG_3951.jpg',
+      'images/october/IMG_3952.jpg',
+      'images/october/IMG_3953.jpg',
+      'images/october/IMG_3954.jpg',
+      'images/october/IMG_3955.jpg',
+      'images/october/IMG_3956.jpg',
+      'images/october/IMG_3957.jpg',
+      'images/october/IMG_3958.jpg',
+      'images/october/IMG_3959.jpg',
+      'images/october/IMG_6935.jpeg',
+      'images/october/IMG_7660.JPG',
+      'images/october/IMG_8394.JPG'
+    ];
+
+    // Create 3 copies for seamless looping
+    const tripleImages = [...allImages, ...allImages, ...allImages];
+
+    // Create header slideshow
+    tripleImages.forEach((imgSrc, index) => {
+      const headerSlide = document.createElement('div');
+      headerSlide.classList.add('header-slide');
+      const img = document.createElement('img');
+      img.src = imgSrc;
+      img.alt = `October Event ${(index % allImages.length) + 1}`;
+      headerSlide.appendChild(img);
+      headerSlidesWrapper.appendChild(headerSlide);
+    });
+
+    const headerSlides = document.querySelectorAll('.header-slide');
+    let currentOffset = allImages.length; // Start at middle set
+    let startX = 0;
+    let currentX = 0;
+    let isDragging = false;
+
+    // Calculate slide width including gap
+    function getSlideWidth() {
+      return 200 + 15; // width + gap
+    }
+
+    // Update position with infinite loop
+    function updateHeaderPosition(animate = true) {
+      if (animate) {
+        headerSlidesWrapper.style.transition = 'transform 0.5s ease-out';
+      } else {
+        headerSlidesWrapper.style.transition = 'none';
+      }
+      const slideWidth = getSlideWidth();
+      headerSlidesWrapper.style.transform = `translateX(-${currentOffset * slideWidth}px)`;
+
+      // Reset to middle set when reaching boundaries for infinite loop
+      if (animate) {
+        setTimeout(() => {
+          if (currentOffset >= allImages.length * 2) {
+            headerSlidesWrapper.style.transition = 'none';
+            currentOffset = allImages.length;
+            headerSlidesWrapper.style.transform = `translateX(-${currentOffset * slideWidth}px)`;
+          } else if (currentOffset <= 0) {
+            headerSlidesWrapper.style.transition = 'none';
+            currentOffset = allImages.length;
+            headerSlidesWrapper.style.transform = `translateX(-${currentOffset * slideWidth}px)`;
+          }
+        }, 500);
+      }
+    }
+
+    // Arrow button click events - scroll by 3 images
+    headerPrevBtn.addEventListener('click', () => {
+      currentOffset -= 3;
+      updateHeaderPosition();
+    });
+
+    headerNextBtn.addEventListener('click', () => {
+      currentOffset += 3;
+      updateHeaderPosition();
+    });
+
+    // Touch events
+    headerSlidesWrapper.addEventListener('touchstart', (e) => {
+      startX = e.touches[0].clientX;
+      isDragging = true;
+      headerSlidesWrapper.style.transition = 'none';
+    });
+
+    headerSlidesWrapper.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      currentX = e.touches[0].clientX;
+      const diff = currentX - startX;
+      const slideWidth = getSlideWidth();
+      const offset = -currentOffset * slideWidth + diff;
+      headerSlidesWrapper.style.transform = `translateX(${offset}px)`;
+    }, { passive: false });
+
+    headerSlidesWrapper.addEventListener('touchend', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+
+      const diff = currentX - startX;
+      const slideWidth = getSlideWidth();
+      const threshold = 50;
+
+      const slidesMoved = Math.round(diff / slideWidth);
+      currentOffset -= slidesMoved;
+
+      updateHeaderPosition();
+    });
+
+    // Mouse events for desktop
+    headerSlidesWrapper.addEventListener('mousedown', (e) => {
+      e.preventDefault();
+      startX = e.clientX;
+      isDragging = true;
+      headerSlidesWrapper.style.transition = 'none';
+      headerSlidesWrapper.style.cursor = 'grabbing';
+    });
+
+    headerSlidesWrapper.addEventListener('mousemove', (e) => {
+      if (!isDragging) return;
+      e.preventDefault();
+      currentX = e.clientX;
+      const diff = currentX - startX;
+      const slideWidth = getSlideWidth();
+      const offset = -currentOffset * slideWidth + diff;
+      headerSlidesWrapper.style.transform = `translateX(${offset}px)`;
+    });
+
+    headerSlidesWrapper.addEventListener('mouseup', (e) => {
+      if (!isDragging) return;
+      isDragging = false;
+      headerSlidesWrapper.style.cursor = 'grab';
+
+      const diff = currentX - startX;
+      const slideWidth = getSlideWidth();
+
+      const slidesMoved = Math.round(diff / slideWidth);
+      currentOffset -= slidesMoved;
+
+      updateHeaderPosition();
+    });
+
+    headerSlidesWrapper.addEventListener('mouseleave', () => {
+      if (isDragging) {
+        isDragging = false;
+        headerSlidesWrapper.style.cursor = 'grab';
+        updateHeaderPosition();
+      }
+    });
+
+    headerSlidesWrapper.style.cursor = 'grab';
+
+    // Initialize position
+    updateHeaderPosition(false);
+  </script>
 </body>
 
 </html>
