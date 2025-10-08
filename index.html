@@ -17,66 +17,38 @@
       color: #333;
     }
 
-    header {
-      position: relative;
+    .page-title {
+      font-size: 3rem;
+      color: #4B0082;
+      margin: 0 0 5px 0;
+      font-family: 'DynaPuff', cursive;
+      font-weight: 700;
       text-align: center;
-      color: white;
-      height: 300px;
-      overflow: hidden;
     }
 
-    #headerSlidesWrapper {
-      display: flex;
-      transition: transform 0.5s ease-out;
-      height: 100%;
-      gap: 15px;
-      padding-top: 0;
-      align-items: flex-start;
+    .page-subtitle {
+      font-size: 1.5rem;
+      color: #4B0082;
+      margin: 0 0 20px 0;
+      font-family: 'DynaPuff', cursive;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
     }
 
-    .header-slide {
-      flex-shrink: 0;
-      height: 100%;
-      width: 200px;
+    .image-grid {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 10px;
     }
 
-    .header-slide img {
-      height: 100%;
+    .image-grid img {
       width: 100%;
+      height: 140px;
       object-fit: cover;
-      object-position: center top;
+      object-position: center;
       display: block;
-    }
-
-    .header-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background-color: rgba(255, 255, 255, 0.8);
-      color: #333;
-      border: none;
-      font-size: 2rem;
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10;
-      transition: background-color 0.3s;
-    }
-
-    .header-arrow:hover {
-      background-color: rgba(255, 255, 255, 1);
-    }
-
-    .header-arrow-left {
-      left: 10px;
-    }
-
-    .header-arrow-right {
-      right: 10px;
+      border-radius: 6px;
     }
 
     .tornado {
@@ -95,42 +67,10 @@
       width: 100%;
     }
 
-    header .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.3);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      z-index: 5;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      color: white;
-      margin: 0;
-      font-family: 'DynaPuff', cursive;
-      font-weight: 700;
-    }
-
-    header h2 {
-      font-size: 1.5rem;
-      color: #fff;
-      margin: 10px 0 0;
-      font-family: 'DynaPuff', cursive;
-      font-weight: 700;
-      text-decoration: none;
-    }
-
-
     .content-container {
       max-width: 1200px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 16px;
     }
 
     .full-width-div {
@@ -171,18 +111,22 @@
       margin-top: 40px;
     }
 
+    @media (max-width: 1024px) {
+      .image-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .image-grid img {
+        height: 130px;
+      }
+    }
+
     @media (max-width: 768px) {
-      header h1 {
+      .page-title {
         font-size: 2rem;
       }
 
-      header h2 {
+      .page-subtitle {
         font-size: 1.2rem;
-      }
-
-      .header-slide img {
-        height: 100%;
-        width: auto;
       }
 
       .full-width-div {
@@ -202,17 +146,21 @@
 </head>
 
 <body>
-  <header>
-    <div id="headerSlidesWrapper"></div>
-    <button class="header-arrow header-arrow-left" id="headerPrevBtn" type="button">‹</button>
-    <button class="header-arrow header-arrow-right" id="headerNextBtn" type="button">›</button>
-    <div class="overlay">
-      <h1>OCTOBER NEWSLETTER</h1>
-      <h2>2025-2026 SGA Booker High</h2>
-    </div>
-  </header>
-
   <div class="content-container">
+    <h1 class="page-title">OCTOBER NEWSLETTER</h1>
+    <h2 class="page-subtitle">2025-2026 SGA Booker High</h2>
+
+    <!-- Top image grid: 7 images -->
+    <div class="image-grid" style="margin-bottom: 20px;">
+      <img src="images/october/IMG_3945.jpg" alt="October Event 1">
+      <img src="images/october/IMG_3947.jpg" alt="October Event 2">
+      <img src="images/october/IMG_3948.jpg" alt="October Event 3">
+      <img src="images/october/IMG_3949.jpg" alt="October Event 4">
+      <img src="images/october/IMG_3950.jpg" alt="October Event 5">
+      <img src="images/october/IMG_3951.jpg" alt="October Event 6">
+      <img src="images/october/IMG_3952.jpg" alt="October Event 7">
+    </div>
+
     <div class="full-width-div purple-div">
       <h2>An Update From Student Government</h2>
       <p>Student government had a busy month, with all four classes coming together to make our Afterglow Homecoming a
@@ -249,178 +197,24 @@
     <div class="tornado-container">
       <div class="tornado"></div>
     </div>
+
+    <!-- Second image grid: 7 images -->
+    <div class="image-grid" style="margin-top: 20px;">
+      <img src="images/october/IMG_3953.jpg" alt="October Event 8">
+      <img src="images/october/IMG_3954.jpg" alt="October Event 9">
+      <img src="images/october/IMG_3955.jpg" alt="October Event 10">
+      <img src="images/october/IMG_3956.jpg" alt="October Event 11">
+      <img src="images/october/IMG_3957.jpg" alt="October Event 12">
+      <img src="images/october/IMG_3958.jpg" alt="October Event 13">
+      <img src="images/october/IMG_3959.jpg" alt="October Event 14">
+    </div>
   </div>
 
   <footer>
     <p>© 2025 Booker High School SGA</p>
     <p style="font-size: 0.9rem; margin-top: 10px; opacity: 0.8;">Newsletter by Julianne Teague</p>
   </footer>
-
-  <script>
-    const headerSlidesWrapper = document.getElementById('headerSlidesWrapper');
-    const headerPrevBtn = document.getElementById('headerPrevBtn');
-    const headerNextBtn = document.getElementById('headerNextBtn');
-
-    // All images - duplicated 3 times for infinite scroll
-    const allImages = [
-      'images/october/IMG_3945.jpg',
-      'images/october/IMG_3947.jpg',
-      'images/october/IMG_3948.jpg',
-      'images/october/IMG_3949.jpg',
-      'images/october/IMG_3950.jpg',
-      'images/october/IMG_3951.jpg',
-      'images/october/IMG_3952.jpg',
-      'images/october/IMG_3953.jpg',
-      'images/october/IMG_3954.jpg',
-      'images/october/IMG_3955.jpg',
-      'images/october/IMG_3956.jpg',
-      'images/october/IMG_3957.jpg',
-      'images/october/IMG_3958.jpg',
-      'images/october/IMG_3959.jpg',
-      'images/october/IMG_6935.jpeg',
-      'images/october/IMG_7660.JPG',
-      'images/october/IMG_8394.JPG'
-    ];
-
-    // Create 3 copies for seamless looping
-    const tripleImages = [...allImages, ...allImages, ...allImages];
-
-    // Create header slideshow
-    tripleImages.forEach((imgSrc, index) => {
-      const headerSlide = document.createElement('div');
-      headerSlide.classList.add('header-slide');
-      const img = document.createElement('img');
-      img.src = imgSrc;
-      img.alt = `October Event ${(index % allImages.length) + 1}`;
-      headerSlide.appendChild(img);
-      headerSlidesWrapper.appendChild(headerSlide);
-    });
-
-    const headerSlides = document.querySelectorAll('.header-slide');
-    let currentOffset = allImages.length; // Start at middle set
-    let startX = 0;
-    let currentX = 0;
-    let isDragging = false;
-
-    // Calculate slide width including gap
-    function getSlideWidth() {
-      return 200 + 15; // width + gap
-    }
-
-    // Update position with infinite loop
-    function updateHeaderPosition(animate = true) {
-      if (animate) {
-        headerSlidesWrapper.style.transition = 'transform 0.5s ease-out';
-      } else {
-        headerSlidesWrapper.style.transition = 'none';
-      }
-      const slideWidth = getSlideWidth();
-      headerSlidesWrapper.style.transform = `translateX(-${currentOffset * slideWidth}px)`;
-
-      // Reset to middle set when reaching boundaries for infinite loop
-      if (animate) {
-        setTimeout(() => {
-          if (currentOffset >= allImages.length * 2) {
-            headerSlidesWrapper.style.transition = 'none';
-            currentOffset = allImages.length;
-            headerSlidesWrapper.style.transform = `translateX(-${currentOffset * slideWidth}px)`;
-          } else if (currentOffset <= 0) {
-            headerSlidesWrapper.style.transition = 'none';
-            currentOffset = allImages.length;
-            headerSlidesWrapper.style.transform = `translateX(-${currentOffset * slideWidth}px)`;
-          }
-        }, 500);
-      }
-    }
-
-    // Arrow button click events - scroll by 3 images
-    headerPrevBtn.addEventListener('click', () => {
-      currentOffset -= 3;
-      updateHeaderPosition();
-    });
-
-    headerNextBtn.addEventListener('click', () => {
-      currentOffset += 3;
-      updateHeaderPosition();
-    });
-
-    // Touch events
-    headerSlidesWrapper.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-      isDragging = true;
-      headerSlidesWrapper.style.transition = 'none';
-    });
-
-    headerSlidesWrapper.addEventListener('touchmove', (e) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      currentX = e.touches[0].clientX;
-      const diff = currentX - startX;
-      const slideWidth = getSlideWidth();
-      const offset = -currentOffset * slideWidth + diff;
-      headerSlidesWrapper.style.transform = `translateX(${offset}px)`;
-    }, { passive: false });
-
-    headerSlidesWrapper.addEventListener('touchend', (e) => {
-      if (!isDragging) return;
-      isDragging = false;
-
-      const diff = currentX - startX;
-      const slideWidth = getSlideWidth();
-      const threshold = 50;
-
-      const slidesMoved = Math.round(diff / slideWidth);
-      currentOffset -= slidesMoved;
-
-      updateHeaderPosition();
-    });
-
-    // Mouse events for desktop
-    headerSlidesWrapper.addEventListener('mousedown', (e) => {
-      e.preventDefault();
-      startX = e.clientX;
-      isDragging = true;
-      headerSlidesWrapper.style.transition = 'none';
-      headerSlidesWrapper.style.cursor = 'grabbing';
-    });
-
-    headerSlidesWrapper.addEventListener('mousemove', (e) => {
-      if (!isDragging) return;
-      e.preventDefault();
-      currentX = e.clientX;
-      const diff = currentX - startX;
-      const slideWidth = getSlideWidth();
-      const offset = -currentOffset * slideWidth + diff;
-      headerSlidesWrapper.style.transform = `translateX(${offset}px)`;
-    });
-
-    headerSlidesWrapper.addEventListener('mouseup', (e) => {
-      if (!isDragging) return;
-      isDragging = false;
-      headerSlidesWrapper.style.cursor = 'grab';
-
-      const diff = currentX - startX;
-      const slideWidth = getSlideWidth();
-
-      const slidesMoved = Math.round(diff / slideWidth);
-      currentOffset -= slidesMoved;
-
-      updateHeaderPosition();
-    });
-
-    headerSlidesWrapper.addEventListener('mouseleave', () => {
-      if (isDragging) {
-        isDragging = false;
-        headerSlidesWrapper.style.cursor = 'grab';
-        updateHeaderPosition();
-      }
-    });
-
-    headerSlidesWrapper.style.cursor = 'grab';
-
-    // Initialize position
-    updateHeaderPosition(false);
-  </script>
+  
 </body>
 
 </html>

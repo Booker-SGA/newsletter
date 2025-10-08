@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "pdf": "node generate-pdf.js",
+    "serve": "npx serve .",
+    "start": "npm run serve"
+  },
+  "dependencies": {
+    "puppeteer": "^24.23.0"
+  }
+}
